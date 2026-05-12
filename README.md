@@ -1,3 +1,4 @@
+<img width="5688" height="3765" alt="CDFPA" src="https://github.com/user-attachments/assets/79d10627-890d-4540-869c-ade369e5e71c" />
 # CDBNet
 
 **CDBNet: A Cross-layer Detail-preserving, Direction-aware, and Boundary-skeleton-guided Network for Chemical Pipeline Extraction from High-Resolution Remote Sensing Images**
@@ -50,6 +51,8 @@ CDBNet follows a feature-extraction, adaptation, decoding, and refinement pipeli
    - adaptively fusing shallow, middle, and deep features
    - injecting high-resolution image details through gated branches
    - producing a detail-preserving feature pyramid
+<img width="5688" height="3765" alt="CDFPA" src="https://github.com/user-attachments/assets/4a94b511-58e5-4c60-b9d3-f796494dee9e" />
+
 
 3. **DAPA: Direction-Aware Pipeline Aggregation**
 
