@@ -1,4 +1,3 @@
-<img width="5688" height="3765" alt="CDFPA" src="https://github.com/user-attachments/assets/79d10627-890d-4540-869c-ade369e5e71c" />
 # CDBNet
 
 **CDBNet: A Cross-layer Detail-preserving, Direction-aware, and Boundary-skeleton-guided Network for Chemical Pipeline Extraction from High-Resolution Remote Sensing Images**
