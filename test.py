@@ -9,7 +9,7 @@ import torch.nn.functional as F
 # 导入你的模块（请确保 model4 路径正确）
 from DOSOtest.MDBNet import MDBNet
 from test_dataset import PipelineDataset, get_transforms
-from DOSOtest.CDBNet import CDBNet
+from CDBNet import CDBNet
 
 def test_and_predict_global():
     # ---------- 1. 配置参数 ----------
