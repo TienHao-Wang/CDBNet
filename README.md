@@ -2,6 +2,8 @@
 
 **CDBNet: A Cross-layer Detail-preserving, Direction-aware, and Boundary-skeleton-guided Network for Chemical Pipeline Extraction from High-Resolution Remote Sensing Images**
 
+📓Note: Before running the code, you need to download the dinov3 code from the dinov3 folder. Download link: https://github.com/facebookresearch/dinov3. This post only includes the official introduction to dinov3 in the dinov3 folder; the download link for the pre-trained weights used in this experiment is provided in weights/cdbnetlink.md.
+
 CDBNet is a deep semantic segmentation framework for extracting **chemical industrial park pipelines** from high-resolution remote sensing images. It is designed for narrow, elongated, low-texture, easily occluded, and topologically complex pipeline structures in dense industrial scenes.
 <img width="5688" height="3765" alt="CDFPA" src="https://github.com/user-attachments/assets/6f8e1f4c-57bf-47b0-9cc6-7f675eaf6453" />
 <img width="6868" height="3915" alt="framework" src="https://github.com/user-attachments/assets/bf5905f0-4177-4a4f-a963-3cd5b4e51496" />
@@ -16,7 +18,7 @@ CDBNet improves pipeline continuity, boundary localization, and structural integ
 
 ---
 
-## Highlights
+## ⭐Highlights⭐
 
 - Uses a frozen **DINOv3 ViT-L** backbone for strong remote-sensing feature representation.
 - Extracts multi-level Transformer features from shallow, middle, and deep layers.
@@ -197,13 +199,14 @@ einops
 
 CDBNet uses a frozen **DINOv3 ViT-L** backbone pretrained on remote sensing imagery.
 
+
 Please download the DINOv3 ViT-L checkpoint and place it under:
 
 ```text
 pretrained/
-└── dinov3_vitl_sat493m.pth
+└── dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth
 ```
-
+The pre-trained weights for dinov3 can be downloaded from official sources.
 Then update the checkpoint path in the configuration file:
 
 ```yaml
@@ -220,10 +223,10 @@ MODEL:
 Train CDBNet on PipelineRS:
 
 ```bash
-python tools/train.py \
+python train.py \
   --config configs/cdbnet_pipelinenrs.yaml \
   --data-root datasets/PipelineRS \
-  --work-dir work_dirs/cdbnet_pipelinenrs
+  --save_dir checkpoints_rs_cdbnet
 ```
 
 Default training settings from the paper:
@@ -245,10 +248,7 @@ Default training settings from the paper:
 Evaluate a trained checkpoint:
 
 ```bash
-python tools/test.py \
-  --config configs/cdbnet_pipelinenrs.yaml \
-  --checkpoint work_dirs/cdbnet_pipelinenrs/best.pth \
-  --data-root datasets/PipelineRS
+python tools/evaluate.py 
 ```
 
 The evaluation reports:
@@ -259,6 +259,8 @@ The evaluation reports:
 - Foreground IoU
 - Mean IoU
 - ALPS
+- Connectivity
+- Completeness
 
 ---
 
@@ -389,7 +391,7 @@ Please note that the dataset and pretrained backbone checkpoints may be subject 
 
 ---
 
-## Acknowledgements
+## Acknowledgements😄
 
 This work was supported by:
 
