@@ -238,14 +238,14 @@ def plot_training_curves(history, save_path):
 def main():
     # 配置
     CONFIG = {
-        'data_root': r'E:\road extraction\deepglobe-road-dataset\DeepGlobe',
-        'dinov3_path': 'dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth',  # 修改为你的 DINOv3 权重路径
+        'data_root': r'E:\PipelineRS',
+        'dinov3_path': 'pretrained/dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth',  # 修改为你的 DINOv3 权重路径
         'batch_size': 16,
         'num_epochs': 100,
         'lr': 0.0005,
         'weight_decay': 1e-4,
         'num_workers': 8,
-        'save_dir': './checkpoints_rs_cdbnet_deepglobe'
+        'save_dir': './checkpoints_rs_cdbnet'
     }
 
     os.makedirs(CONFIG['save_dir'], exist_ok=True)
