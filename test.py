@@ -6,18 +6,16 @@ from PIL import Image
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 
-# 导入你的模块（请确保 model4 路径正确）
-from DOSOtest.MDBNet import MDBNet
-from test_dataset import PipelineDataset, get_transforms
 from CDBNet import CDBNet
+from test_dataset import PipelineDataset, get_transforms
 
 def test_and_predict_global():
     # ---------- 1. 配置参数 ----------
     CONFIG = {
-        'test_data_root': r'E:\DINOv3 with CIP\CIPs\Yantai',  # 建议先测验证集对齐曲线
-        'dinov3_path': 'dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth',
+        'test_data_root': r'E:\PipelineRS\test',  # 建议先测验证集对齐曲线
+        'dinov3_path': 'pretrained/dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth',
         'checkpoint_path': './checkpoints_rs_cdbnet/best_model.pth',
-        'save_dir': './test_global_results_CDBNet_Yantai',
+        'save_dir': './test_global_results_cbdnet',
         'batch_size': 32,  # 与训练保持一致
         'threshold': 0.5,
         'device': 'cuda' if torch.cuda.is_available() else 'cpu'
