@@ -30,7 +30,7 @@ CDBNet improves pipeline continuity, boundary localization, and structural integ
 
 ---
 
-## Overall Architecture
+## 🦀 Overall Architecture
 
 CDBNet follows a feature-extraction, adaptation, decoding, and refinement pipeline:
 
@@ -78,7 +78,7 @@ CDBNet follows a feature-extraction, adaptation, decoding, and refinement pipeli
 
 ---
 
-## Main Contributions
+## 💠Main Contributions
 
 - A new remote sensing pipeline extraction dataset, **PipelineRS**, was constructed from GF-2 and GF-7 satellite imagery covering four representative chemical industrial parks in China.
 - A detail-preserving adaptation strategy, **CDFPA**, was proposed to bridge frozen DINOv3 features and dense segmentation requirements.
@@ -226,7 +226,6 @@ Train CDBNet on PipelineRS:
 
 ```bash
 python train.py \
-  --config configs/cdbnet_pipelinenrs.yaml \
   --data-root datasets/PipelineRS \
   --save_dir checkpoints_rs_cdbnet
 ```
@@ -244,6 +243,22 @@ Default training settings from the paper:
 | GPU | NVIDIA GeForce RTX 3090 24GB |
 
 ---
+
+## Test
+Test a trained checkpoint:
+```bash
+python test.py \
+  --data-root datasets/PipelineRS/test \
+  --save_dir test_cdbnet_pipelineRS
+```
+The evaluation reports:
+
+- Precision
+- Recall
+- F1-Score
+- Foreground IoU
+- Mean IoU
+- \save_dir/mask_tif (the results of test set)
 
 ## Evaluation
 
