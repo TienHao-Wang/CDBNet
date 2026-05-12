@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
 from CDBNet import CDBNet
-from dataset2 import PipelineDataset, get_transforms
+from train_dataset import PipelineDataset, get_transforms
 
 # 设置中文字体支持
 rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
