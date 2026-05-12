@@ -5,7 +5,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from torchvision import transforms
 
-from model4 import build_model
+from CDBNet import CDBNet
 
 
 def predict_single_image(model, image_path, device, threshold=0.5):
@@ -76,12 +76,12 @@ def visualize_result(image_path, mask, save_path=None):
 
 def main():
     # 配置
-    model_path = './checkpoints6/best_model.pth'
-    image_path = r"E:\DINOv3 with CIP\paperchart\Generalizeimages\N_1280_3200.tif"
+    model_path = './checkpoints_rs_cdbnet/best_model.pth'
+    image_path = r"your rs image"
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # 加载模型
-    model = build_model(dinov3_path='dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth')
+    model = CDBNet(dinov3_path='dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth')
     checkpoint = torch.load(model_path, map_location=device)
     model.load_state_dict(checkpoint['model_state_dict'])
     model = model.to(device)
@@ -92,7 +92,7 @@ def main():
     mask = predict_single_image(model, image_path, device)
 
     # 可视化
-    visualize_result(image_path, mask, save_path='result3.png')
+    visualize_result(image_path, mask, save_path='result.png')
 
 
 if __name__ == '__main__':
