@@ -206,13 +206,13 @@ Please download the DINOv3 ViT-L checkpoint and place it under:
 pretrained/
 └── dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth
 ```
-The pre-trained weights for dinov3 can be downloaded from official sources.
+**The pre-trained weights for dinov3 can be downloaded from official sources.**
 Then update the checkpoint path in the configuration file:
 
 ```yaml
 MODEL:
   BACKBONE: dinov3_vitl
-  BACKBONE_WEIGHTS: pretrained/dinov3_vitl_sat493m.pth
+  BACKBONE_WEIGHTS: dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth
   FREEZE_BACKBONE: true
 ```
 
