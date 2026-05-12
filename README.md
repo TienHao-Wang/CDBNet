@@ -140,7 +140,7 @@ It covers four representative chemical industrial parks:
 - Foreground: pipeline pixels, value `255`
 - Background: non-pipeline pixels, value `0`
 - Dataset split: **train : val : test = 7 : 1 : 2**
-- In accordance with the research team's requirements, only a portion of the dataset has been made open source.
+- In accordance with the research team's requirements, only a portion of the dataset has been made open source. The download link is https://pan.baidu.com/s/1GMtc3EGNqDbVroX4i6KV3g?pwd=fyjz.
 
 ### Expected Dataset Structure
 
