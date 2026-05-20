@@ -5,8 +5,9 @@
 📓Note: Before running the code, you need to download the dinov3 code from the dinov3 folder. Download link: https://github.com/facebookresearch/dinov3. This post only includes the official introduction to dinov3 in the dinov3 folder; the download link for the pre-trained weights used in this experiment is provided in weights/cdbnetlink.md.
 
 CDBNet is a deep semantic segmentation framework for extracting **chemical industrial park pipelines** from high-resolution remote sensing images. It is designed for narrow, elongated, low-texture, easily occluded, and topologically complex pipeline structures in dense industrial scenes.
-<img width="5688" height="3765" alt="CDFPA" src="https://github.com/user-attachments/assets/6f8e1f4c-57bf-47b0-9cc6-7f675eaf6453" />
-<img width="6868" height="3915" alt="framework" src="https://github.com/user-attachments/assets/bf5905f0-4177-4a4f-a963-3cd5b4e51496" />
+<img width="6868" height="4472" alt="framework" src="https://github.com/user-attachments/assets/5d38a816-7e6b-4b9d-8c7b-0f46455d77f2" />
+
+
 
 The model combines a frozen **DINOv3 ViT-L** remote-sensing foundation backbone with three task-specific modules:
 
